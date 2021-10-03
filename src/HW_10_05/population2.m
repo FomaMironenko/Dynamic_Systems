@@ -20,7 +20,7 @@ plot(T, P1, 'r*');
 plot(T, P2, 'bo');
 plot(Tcont, realP, 'g', 'lineWidth', 2);
 title('data comparison; dt = 10');
-legend('single precision', 'double precision', 'observation')
+legend('single precision', 'double precision', 'real solution')
 xlabel('t, years');
 ylabel('population V');
 
