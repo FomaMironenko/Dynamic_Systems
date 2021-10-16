@@ -46,25 +46,3 @@ A4_eig = eig(A4)';
 disp(table(A4_eig));
 disp(repelem('=', 1, 40));
 
-
-%% main function
-function draw_offsets(A)
-    assert(ismatrix(A) && size(A, 1) == size(A, 2));
-    span = 1;
-    lim = span * 1.3;
-    [X, Y] = meshgrid(...
-        -span : .2 : span, -span : .2 : span);
-    vec = [X(:)'; Y(:)'];
-    appl = A * vec;
-    offset = appl - vec;
-    
-    hold on;
-    grid on;
-    xlim([-lim, lim]);
-    ylim([-lim, lim]);
-    plot(X(:), Y(:), 'r.');
-    plot(0, 0, 'ro')
-    quiver( X(:)', Y(:)', offset(1, :), offset(2, :));
-    hold off;
-end
-
